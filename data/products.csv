@@ -1,0 +1,49 @@
+sku,product,category,supplier_id,unit_cost,unit_price,pack_size
+SW-001,Cold brew,Beverages,S1,2.12,3.5,6
+SW-002,Sparkling water,Beverages,S2,2.59,4.27,12
+SW-003,Orange juice,Beverages,S3,5.56,9.17,24
+SW-004,Green tea,Beverages,S4,11.41,18.83,6
+SW-005,Cola,Beverages,S1,2.2,3.63,12
+SW-006,Oat latte,Beverages,S2,8.78,14.49,24
+SW-007,Energy drink,Beverages,S3,2.21,3.65,6
+SW-008,Mineral water,Beverages,S4,8.0,13.2,12
+SW-009,Trail mix,Snacks,S1,6.85,11.3,24
+SW-010,Sea salt chips,Snacks,S2,1.74,2.87,6
+SW-011,Protein bar,Snacks,S3,3.16,5.21,12
+SW-012,Dark chocolate,Snacks,S4,5.52,9.11,24
+SW-013,Popcorn,Snacks,S1,3.16,5.21,6
+SW-014,Rice crackers,Snacks,S2,9.82,16.2,12
+SW-015,Roasted almonds,Snacks,S3,4.96,8.18,24
+SW-016,Granola bites,Snacks,S4,9.39,15.49,6
+SW-017,Basmati rice,Pantry,S1,2.89,4.77,12
+SW-018,Pasta,Pantry,S2,11.44,18.88,24
+SW-019,Tomato sauce,Pantry,S3,11.19,18.46,6
+SW-020,Peanut butter,Pantry,S4,2.68,4.42,12
+SW-021,Rolled oats,Pantry,S1,11.94,19.7,24
+SW-022,Canned beans,Pantry,S2,3.37,5.56,6
+SW-023,Olive oil,Pantry,S3,3.92,6.47,12
+SW-024,Honey,Pantry,S4,1.59,2.62,24
+SW-025,Dish soap,Household,S1,2.53,4.17,6
+SW-026,Paper towels,Household,S2,11.16,18.41,12
+SW-027,Laundry pods,Household,S3,9.88,16.3,24
+SW-028,Bin liners,Household,S4,4.78,7.89,6
+SW-029,Hand soap,Household,S1,3.33,5.49,12
+SW-030,Surface spray,Household,S2,6.16,10.16,24
+SW-031,Sponges,Household,S3,11.75,19.39,6
+SW-032,Tissues,Household,S4,1.81,2.99,12
+SW-033,Greek yogurt,Fresh,S1,6.49,10.71,24
+SW-034,Cheddar,Fresh,S2,4.62,7.62,6
+SW-035,Milk,Fresh,S3,10.07,16.62,12
+SW-036,Eggs,Fresh,S4,8.88,14.65,24
+SW-037,Hummus,Fresh,S1,5.37,8.86,6
+SW-038,Salad kit,Fresh,S2,2.16,3.56,12
+SW-039,Butter,Fresh,S3,6.78,11.19,24
+SW-040,Tofu,Fresh,S4,6.09,10.05,6
+SW-041,Shampoo,Personal care,S1,2.01,3.32,12
+SW-042,Toothpaste,Personal care,S2,4.44,7.33,24
+SW-043,Body wash,Personal care,S3,6.4,10.56,6
+SW-044,Deodorant,Personal care,S4,3.59,5.92,12
+SW-045,Lip balm,Personal care,S1,10.2,16.83,24
+SW-046,Sunscreen,Personal care,S2,3.73,6.15,6
+SW-047,Hand cream,Personal care,S3,9.98,16.47,12
+SW-048,Dental floss,Personal care,S4,10.1,16.66,24

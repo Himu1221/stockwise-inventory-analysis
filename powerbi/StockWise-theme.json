@@ -1,0 +1,7 @@
+{
+  "name": "StockWise Control Room",
+  "dataColors": ["#63E9F3", "#C1F783", "#FFC87B", "#FF8C9D", "#8DA9E8", "#91A3BB"],
+  "background": "#080E17",
+  "foreground": "#EDF4FC",
+  "tableAccent": "#63E9F3"
+}

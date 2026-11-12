@@ -1,0 +1,3 @@
+policy,stockout_days,unmet_units,avg_inventory,spend,ending_open_units
+Fixed cover rule,215,1231,39860.75,50314.38,1812
+StockWise lead-based rule,166,994,37676.23,54156.54,2310

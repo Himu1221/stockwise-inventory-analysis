@@ -1,0 +1,47 @@
+// Handoff measures. Create one measure per block in Power BI Desktop.
+// Import planning_inputs as Planning; daily_inventory as Daily; purchase_orders as Orders.
+// Type dates as Date, quantities as Whole number and demand/cost as Decimal.
+// Power BI Desktop execution is not verified in this release.
+
+On Hand Value = SUMX(Planning, Planning[on_hand] * Planning[unit_cost])
+
+Stockout Exposure = DIVIDE(SUM(Planning[stockout_days]), SUM(Planning[observation_days]))
+
+Stockout SKUs = COUNTROWS(FILTER(Planning, Planning[on_hand] = 0))
+
+Excess Value =
+SUMX(
+    FILTER(Planning, Planning[daily_demand] > 0 && DIVIDE(Planning[on_hand], Planning[daily_demand]) > 60),
+    Planning[on_hand] * Planning[unit_cost]
+)
+
+Fully Stocked SKUs = CALCULATE(DISTINCTCOUNT(Daily[sku]), Daily[fully_available] = 1)
+
+Delivered Orders = COUNTROWS(FILTER(Orders, NOT ISBLANK(Orders[received_date])))
+
+On Time Delivered =
+COUNTROWS(FILTER(Orders,
+    NOT ISBLANK(Orders[received_date]) && Orders[received_date] <= Orders[promised_date]
+))
+
+Delivered On Time Rate = DIVIDE([On Time Delivered], [Delivered Orders])
+
+Overdue Open Orders =
+COUNTROWS(FILTER(Orders,
+    ISBLANK(Orders[received_date]) && Orders[promised_date] <= DATE(2026, 10, 31)
+))
+
+// Create disconnected numeric-range parameters named DemandFactor, LeadFactor,
+// SafetyDays and ReviewDays with matching numeric column names.
+Requested Units =
+SUMX(Planning,
+    VAR Demand = Planning[daily_demand] * SELECTEDVALUE(DemandFactor[DemandFactor], 1)
+    VAR Lead = Planning[lead_days] * SELECTEDVALUE(LeadFactor[LeadFactor], 1)
+    VAR Safety = SELECTEDVALUE(SafetyDays[SafetyDays], 4)
+    VAR Review = SELECTEDVALUE(ReviewDays[ReviewDays], 7)
+    VAR Position = Planning[on_hand] + Planning[on_order]
+    VAR Trigger = Demand * (Lead + Safety)
+    VAR Target = Demand * (Lead + Safety + Review)
+    RETURN IF(Position <= Trigger,
+        ROUNDUP(DIVIDE(MAX(0, Target - Position), Planning[pack_size]), 0) * Planning[pack_size], 0)
+)
